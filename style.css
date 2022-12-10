@@ -1,0 +1,218 @@
+
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;700;800;900&display=swap');
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+:root{
+    --bg-color:#F9FAFB;
+}
+
+body{
+    background: var(--bg-color);
+    position: relative;
+    width: 100vw;
+    font-family: 'Inter';
+    font-style: normal;
+}
+
+/* Todo List */
+
+header h1{
+    position: absolute;
+    width: 377px;
+    height: 87px;
+    left: 532px;
+    top: 35px;
+
+    font-family: 'Inter';
+    font-style: normal;
+    font-weight: 900;
+    font-size: 72px;
+    line-height: 87px;
+
+    color: #E2E8F0;
+}
+
+main section {
+    position: absolute;
+    width: 445px;
+    height: 1196px;
+    left: 498px;
+    top: 161px;
+}
+
+.todo-items-container{
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    padding: 0px;
+    gap: 34px;
+}
+
+main section .todo-item{
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    padding: 26px 34px;
+    gap: 12px;
+
+    position: relative;
+    width: 445px;
+    height: 100%;
+
+    box-shadow: 0px 1px 2px rgba(0, 0, 0, 0.05);
+    border-radius: 8px;
+    
+    background: #FFFFFF;
+}
+
+main section .todo-item h3{
+    width: 100%;
+    min-height: 29px;
+
+    font-family: 'Inter';
+    font-style: normal;
+    font-weight: 800;
+    font-size: 24px;
+    line-height: 29px;
+
+    color: #374151;
+
+
+}
+
+main section .todo-item .todo-text{
+    width: 377px;
+    height: 41px;
+
+    font-family: 'Inter';
+    font-style: normal;
+    font-weight: 500;
+    font-size: 16px;
+    line-height: 19px;
+
+    color: #6B7280;
+}
+
+/* to do icons */
+
+.todo-item-icons{
+    display: flex;
+    justify-content: right;
+    gap: 10px;
+    padding: 5px 8px 5px 0;
+}
+
+main section .todo-item .todo-item-icons p{
+    padding:5px 8px 5px 8px;
+    border-radius: 10px;
+}
+
+.todo-item-icons .red-icon{
+    background: #FCE7F3;
+}
+.todo-item-icons .green-icon{
+    background: #F0FDF4;
+}
+
+/* form section */
+
+main section .form-section{
+    display: none;
+    height: 331px !important;
+    
+}
+.form-section .form input{
+    width: 370px;
+    height: 44px;
+    border: 1px solid #F3F4F6;
+    border-radius: 4px;
+    margin-top: 41px;
+    padding: 0.5rem;
+
+    font-family: 'Inter';
+    font-style: normal;
+    font-weight: 500;
+    font-size: 12px;
+    line-height: 15px;
+}
+
+.form-section .form input::placeholder{
+    color: #E2E8F0;
+    padding: 0.5rem;
+
+    font-family: 'Inter';
+    font-style: normal;
+    font-weight: 500;
+    font-size: 12px;
+    line-height: 15px;
+}
+
+.form-section .form textarea{
+    width: 370px;
+    height: 70px;
+    border: 1px solid #F3F4F6;
+    border-radius: 4px;
+    margin-top: 14px;
+    resize: none;
+    padding: 0.5rem;
+
+    font-family: 'Inter';
+    font-style: normal;
+    font-weight: 500;
+    font-size: 12px;
+    line-height: 15px;
+}
+
+.form-section .form textarea::placeholder{
+    color: #E2E8F0;
+    padding: 0.5rem;
+
+    font-family: 'Inter';
+    font-style: normal;
+    font-weight: 500;
+    font-size: 12px;
+    line-height: 15px;
+}
+
+/* todo buttons */
+
+footer{
+    width: 100%;
+}
+
+footer .todo-buttons{
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+
+    width: 10rem;
+    margin: 0 auto;
+}
+
+footer .todo-buttons i{
+    color: #94A3B8;
+    font-size: 36px;
+    margin: 40px;
+}
+
+footer .todo-buttons i:hover{
+    color: steelblue;
+    cursor: pointer;
+}
+
+.form-section{
+    margin-top: 2rem;
+}
+
+footer .todo-buttons .remove-btn{
+    display: none;
+}
+footer .todo-buttons .send-btn{
+    display: none;
+}
+
