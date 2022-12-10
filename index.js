@@ -61,10 +61,13 @@ sendBtn.addEventListener('click', async ()=>{
 
     formSection.style.display = 'none'
 
-    const myResponse = await getFetch(todoInput.value,todoTextInput.value);
-    myTodoList.push(myResponse)
-
-    insertIntoHtml(myTodoList)
+    // fixing adding null input bug
+    if(todoInput.value && todoTextInput.value){
+        const myResponse = await getFetch(todoInput.value,todoTextInput.value);
+        myTodoList.push(myResponse)
+    
+        insertIntoHtml(myTodoList)
+    }
 
 })
 
