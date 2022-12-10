@@ -35,31 +35,17 @@ const todoTextInput = document.querySelector('.todo-item-inputText')
 
 // add button
 addBtn.addEventListener('click',()=>{
-    removeBtn.style.display = 'block'
-    sendBtn.style.display = 'block'
-    addBtn.style.display = 'none'
-
-    todoInput.value = ''
-    todoTextInput.value = ''
-    formSection.style.display = 'block'
+    toggleForm('show')
 })
 
 // remove button
 removeBtn.addEventListener('click',()=>{
-    removeBtn.style.display = 'none'
-    sendBtn.style.display = 'none'
-    addBtn.style.display = 'block'
-
-    formSection.style.display = 'none'
+    toggleForm('hidde')
 })
 
 // sending form request button
 sendBtn.addEventListener('click', async ()=>{
-    removeBtn.style.display = 'none'
-    sendBtn.style.display = 'none'
-    addBtn.style.display = 'block'
-
-    formSection.style.display = 'none'
+    toggleForm('hidde')
 
     // fixing adding null input bug
     if(todoInput.value && todoTextInput.value){
@@ -75,6 +61,7 @@ sendBtn.addEventListener('click', async ()=>{
 
 // reusable functions
 
+//positng data with title and body input 
 const getFetch = async (title,body)=>{
     const res = await fetch('https://jsonplaceholder.typicode.com/posts',{
         method:'POST',
@@ -92,7 +79,7 @@ const getFetch = async (title,body)=>{
     return data; 
 }
 
-
+//inserting html elements from an array 
 const insertIntoHtml = (arr)=>{
     let newTodolist = []
     arr.map((todo)=>{
@@ -109,5 +96,25 @@ const insertIntoHtml = (arr)=>{
     })
 
     return todoContainer.innerHTML = newTodolist.join('')
+}
+
+
+//toggling Form section 
+const toggleForm = (x)=>{
+    if(x === 'show'){
+        removeBtn.style.display = 'block'
+        sendBtn.style.display = 'block'
+        addBtn.style.display = 'none'
+
+        todoInput.value = ''
+        todoTextInput.value = ''
+        formSection.style.display = 'block'
+    }else if(x === 'hidde'){
+        removeBtn.style.display = 'none'
+        sendBtn.style.display = 'none'
+        addBtn.style.display = 'block'
+    
+        formSection.style.display = 'none'
+    }
 }
 
